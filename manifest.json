@@ -1,11 +1,16 @@
 {
-    "name": "Title Picker",
-    "version": "0.0.1",
-    "manifest_version": 2,
+    "name": "LinkedIn Profile Scraper",
+    "version": "0.0.3",
+    "manifest_version": 3,
     "permissions": [
-        "tabs"
+        "tabs",
+        "activeTab",
+        "scripting"
     ],
-    "browser_action": {
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
         "default_popup": "popup.html",
         "default_icon": "icon.png"
     }

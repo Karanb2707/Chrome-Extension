@@ -1,10 +1,10 @@
-document.getElementById('getTitleButton').addEventListener('click', function() {
-    // Get the current active tab
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        var currentTab = tabs[0];
-        var tabTitle = currentTab.title;
+document.getElementById('scrapeButton').addEventListener('click', function() {
+    const linkedinUrls = [
+        'https://www.linkedin.com/in/shilpa-tiwari-79b82b212/',
+        'https://www.linkedin.com/in/prernachavan232/',
+        'https://www.linkedin.com/in/proton9/'
+    ];
 
-        // Display the title in the popup
-        document.getElementById('tabTitle').textContent = 'Tab Title: ' + tabTitle;
-    });
+    // Send the list of URLs to the background script
+    chrome.runtime.sendMessage({ urls: linkedinUrls });
 });
